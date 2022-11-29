@@ -1,6 +1,7 @@
 FROM openjdk:18-jdk-alpine AS gogle
 ADD Spring-Shopping-Cart.tar .
 WORKDIR Spring-Shopping-Cart
+RUN chmod +x mvnw
 RUN ./mvnw clean install -DskipTests=true
 
 FROM openjdk:18-jdk-alpine
